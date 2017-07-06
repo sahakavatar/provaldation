@@ -1,0 +1,36 @@
+{
+    "name": "sahakavatar/provaldation",
+    "type": "library",
+    "description": "This is a little neat helper for the validate forms",
+    "keywords": ["avatar", "pro", "validator"],
+    "homepage": "http://github.com/sahakavatar/provaldation",
+    "license": "Apache2",
+    "authors": [
+        {
+            "name": "Nils Plaschke",
+            "email": "github@nilsplaschke.de",
+            "homepage": "http://nilsplaschke.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Avatar\\ProValid\\": "provaldation"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Chumper\\Zipper\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
