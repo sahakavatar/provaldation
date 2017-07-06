@@ -1,36 +1,8 @@
 {
     "name": "sahakavatar/provaldation",
+    "description": "This is a little neat helper for the validate forms cms",
     "type": "library",
-    "description": "This is a little neat helper for the validate forms",
-    "keywords": ["avatar", "pro", "validator"],
-    "homepage": "http://github.com/sahakavatar/provaldation",
     "license": "Apache2",
-    "authors": [
-        {
-            "name": "Sahak",
-            "email": "sahak@ukdevplus.co.uk",
-            "homepage": "#",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": ">=5.6.0"
-    },
-    "require-dev": {
-    },
-    "autoload": {
-        "psr-4": {
-            "Avatar\\ProValid\\": "sahakavatar/provaldation/src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Avatar\\ProValid\\": "tests/"
-        }
-    },
-    "config": {
-        "sort-packages": true
-    },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "require": {}
 }
