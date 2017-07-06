@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Avatar\\ProValid\\": "provaldation"
+            "Avatar\\ProValid\\": "sahakavatar/provaldation/src"
         }
     },
     "autoload-dev": {
