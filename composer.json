@@ -7,9 +7,9 @@
     "license": "Apache2",
     "authors": [
         {
-            "name": "Nils Plaschke",
-            "email": "github@nilsplaschke.de",
-            "homepage": "http://nilsplaschke.de",
+            "name": "Sahak",
+            "email": "sahak@ukdevplus.co.uk",
+            "homepage": "#",
             "role": "Developer"
         }
     ],
@@ -25,7 +25,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Chumper\\Zipper\\": "tests/"
+            "Avatar\\ProValid\\": "tests/"
         }
     },
     "config": {
