@@ -3,6 +3,7 @@
     "description": "This is a little neat helper for the validate forms cms",
     "type": "library",
     "license": "Apache2",
+    "minimum-stability": "dev",
     "require": {},
     "autoload": {
         "psr-4": {
