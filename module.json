@@ -1,0 +1,15 @@
+{
+  "name": "Pro Validator",
+  "namespace": "ProValidator",
+  "type": "extra",
+  "enabled": true,
+  "author": "Sahak",
+  "author_site": "http:\/\/ara.com\/",
+  "route": "Routes\/web.php",
+  "autoload": "Autoload",
+  "have_setting": "0",
+  "version": "1.0",
+  "description": "This is the description for the Test module.",
+  "slug": "ProValidator",
+  "basename": "ProValidator"
+}

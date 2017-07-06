@@ -1,0 +1,12 @@
+{
+  "title": "Sumit button",
+  "self_type": "widget",
+  "main_type": "buttons",
+  "type": "general",
+  "enabled": "true",
+  "have_settings": 1,
+  "author": "Hasmik",
+  "section": "frontend",
+  "main_file": "tpl.blade.php",
+  "slug": "583bd83bbb954"
+}
