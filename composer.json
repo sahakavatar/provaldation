@@ -12,6 +12,7 @@
         "psr-4": {
             "Sahak\\Validator\\": "sahakavatar/provaldation/src"
         }
-    }
+    },
+    "version": "1.0.0"
 
 }
