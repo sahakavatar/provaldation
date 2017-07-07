@@ -13,7 +13,7 @@
             "Sahak\\Validator\\": "sahakavatar/provaldation/src"
         },
         "files":[
-            "app/ExtraModules/vendor/sahakavatar/provaldation/src/index.php"
+            "src/index.php"
         ]
     },
     "version": "1.0.0"
