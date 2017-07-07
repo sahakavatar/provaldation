@@ -11,7 +11,10 @@
     "autoload": {
         "psr-4": {
             "Sahak\\Validator\\": "sahakavatar/provaldation/src"
-        }
+        },
+        "files":[
+            "app/ExtraModules/vendor/sahakavatar/provaldation/src/index.php"
+        ]
     },
     "version": "1.0.0"
 
