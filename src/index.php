@@ -1,5 +1,5 @@
 <?php
 
-app()->register('Sahak\Validator\Providers\ModuleServiceProvider');
+addProvider('Sahak\Validator\Providers\ModuleServiceProvider');
 
 
