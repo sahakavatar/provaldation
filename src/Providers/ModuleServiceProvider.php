@@ -24,8 +24,9 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        echo 'tttttttttttttttttttttttttt';
         \Eventy::action('admin.menus', [
-            "title" => "ProValidator",
+            "title" => "ProValidatorTest",
             "custom-link" => "#",
             "icon" => "fa fa-folder-open",
             "is_core" => "yes",
