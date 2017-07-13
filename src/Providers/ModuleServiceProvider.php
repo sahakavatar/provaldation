@@ -9,30 +9,42 @@
  *
  */
 
-namespace App\ExtraModules\ProValidator\Providers;
+namespace Sahak\Validator\Providers;
+use Illuminate\Support\ServiceProvider;
 
-use Caffeinated\Modules\Support\ServiceProvider;
 
 class ModuleServiceProvider extends ServiceProvider
 {
+
+
     /**
-     * Bootstrap the module services.
+     * Bootstrap any application services.
      *
      * @return void
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__.'/../Resources/Lang', 'ProValidator');
-        $this->loadViewsFrom(__DIR__.'/../Resources/Views', 'ProValidator');
+        \Eventy::action('admin.menus', [
+            "title" => "ProValidator",
+            "custom-link" => "#",
+            "icon" => "fa fa-folder-open",
+            "is_core" => "yes",
+            "main" => true,
+            "children" => []
+        ]);
     }
 
+
     /**
-     * Register the module services.
+     * Register any application services.
      *
      * @return void
      */
     public function register()
     {
-        $this->app->register(RouteServiceProvider::class);
+        //
+
     }
+
 }
+
