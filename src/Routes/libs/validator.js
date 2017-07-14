@@ -69,7 +69,7 @@ $(document).ready(function () {
         if ($(this).val() != 0) {
             group = $(this).val();
             var data = {"rule": group};
-            sendajaxvar('/admin/provalidator/copy/get-rules-groups', data, function (request) {
+            sendajaxvar('/admin/auto-validator/copy/get-rules-groups', data, function (request) {
 
                 $('.pro_validation_rules_group_place').html(request.html);
 
@@ -84,7 +84,7 @@ $(document).ready(function () {
         if ($(this).val() != 0) {
             rule = $(this).val();
             var data = {"rule": $(this).val(), 'group': group};
-            sendajaxvar('/admin/provalidator/copy/get-rules-settings', data, function (request) {
+            sendajaxvar('/admin/auto-validator/copy/get-rules-settings', data, function (request) {
 
                 $('#pro_validator_settings_area').html(request.html + addButton);
 

@@ -39,26 +39,26 @@ class ProValidatorCopyConroller extends Controller
      */
     public function getIndex()
     {
-        return view('ProValidator::copy.index');
+        return view('AutoValidator::copy.index');
     }
 
     public function getValidations()
     {
-        $validations = \App\ExtraModules\ProValidator\Models\Validations::all();
-        return view('ProValidator::copy.copy.lists', compact('validations'));
+        $validations = \Sahak\Validator\Models\Validations::all();
+        return view('AutoValidator::copy.copy.lists', compact('validations'));
     }
     public function getCreateValidation()
     {
-        return view('ProValidator::copy.create');
+        return view('AutoValidator::copy.create');
     }
     public function getCreateCopyValidation()
     {
-        return view('ProValidator::copy.create_copy');
+        return view('AutoValidator::copy.create_copy');
     }
 
     public function getSettings()
     {
-        return view('ProValidator::copy.settings');
+        return view('AutoValidator::copy.settings');
     }
 
     /**
@@ -70,8 +70,8 @@ class ProValidatorCopyConroller extends Controller
         if ($rule) {
             $rule = '.' . $rule;
         }
-        if (\View::exists('ProValidator::copy.groups' . $rule)) {
-            $html = \View::make('ProValidator::copy.groups' . $rule)->render();
+        if (\View::exists('AutoValidator::copy.groups' . $rule)) {
+            $html = \View::make('AutoValidator::copy.groups' . $rule)->render();
             return \Response::json(['html' => $html]);
 
         }
@@ -83,7 +83,7 @@ class ProValidatorCopyConroller extends Controller
     {
         $rule = $request->get('rule');
         $group = $request->get('group');
-        $view = "ProValidator::copy.settings.$group.$rule";
+        $view = "AutoValidator::copy.settings.$group.$rule";
         if (\View::exists($view)) {
             $html = \View::make($view)->render();
             return \Response::json(['html' => $html]);
@@ -105,7 +105,7 @@ class ProValidatorCopyConroller extends Controller
         if ($validator->fails()) return redirect()->back()->withErrors($validator->errors());
 
         $data = $request->except(['rules', '_token']);
-        \App\ExtraModules\ProValidator\Models\Validations::create($data + ['code' => $result['rules']]);
+        \Sahak\Validator\Models\Validations::create($data + ['code' => $result['rules']]);
 
         return redirect()->back()->with('message', 'Validation successfully created');
     }

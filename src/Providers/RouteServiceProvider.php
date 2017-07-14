@@ -9,7 +9,7 @@
  *
  */
 
-namespace App\ExtraModules\ProValidator\Providers;
+namespace Sahak\Validator\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -84,12 +84,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::group([
-            'middleware' => 'api',
-            'namespace'  => $this->namespace,
-            'prefix'     => 'api',
-        ], function ($router) {
-            require module_path('ara', 'Routes/api.php');
-        });
+
     }
 }

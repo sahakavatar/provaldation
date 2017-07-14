@@ -24,8 +24,8 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__ . '/../Resources/Lang', 'core_avatar');
-        $this->loadViewsFrom(__DIR__ . '/../Resources/Views', 'core_avatar');
+        $this->loadTranslationsFrom(__DIR__ . '/../views', 'AutoValidator');
+        $this->loadViewsFrom(__DIR__ . '/../views', 'AutoValidator');
         \Eventy::action('admin.menus', [
             "title" => "AutoValidator",
             "custom-link" => "#",

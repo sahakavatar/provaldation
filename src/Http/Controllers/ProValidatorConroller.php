@@ -24,7 +24,7 @@ use Illuminate\Http\Request;
  * Class TestController
  * @package App\ExtraModules\Test\Http\Controllers
  */
-class AutoValidatorConroller extends Controller
+class ProValidatorConroller extends Controller
 {
     /**
      * TestController constructor.
@@ -52,7 +52,7 @@ class AutoValidatorConroller extends Controller
 
     public function getValidations()
     {
-        $validations = Sahak\Validator\Models\Validations::all();
+        $validations = \Sahak\Validator\Models\Validations::all();
         return view('AutoValidator::lists', compact('validations'));
     }
     public function getCreateValidation()

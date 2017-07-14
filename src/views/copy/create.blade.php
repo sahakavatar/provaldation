@@ -100,5 +100,5 @@
 @stop
 @section('JS')
     {!! Html::script('/public/js/tag-it.js') !!}
-    {!! Html::script('/public/js/validator.js') !!}
+    {!! Html::script(route('auto_validate_js')) !!}
 @stop
