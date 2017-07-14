@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ExtraModules\ProValidator\Models;
+namespace Sahak\Validator\Models;
 
 use App\Models\BaseModel;
 

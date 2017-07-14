@@ -24,7 +24,7 @@ use Illuminate\Http\Request;
  * Class TestController
  * @package App\ExtraModules\Test\Http\Controllers
  */
-class ProValidatorConroller extends Controller
+class AutoValidatorConroller extends Controller
 {
     /**
      * TestController constructor.
@@ -39,7 +39,7 @@ class ProValidatorConroller extends Controller
      */
     public function getIndex()
     {
-        return view('ProValidator::index'); 1Q1Q1Q  
+        return view('AutoValidator::index'); 
     }
 
     public function getJs()
@@ -52,21 +52,21 @@ class ProValidatorConroller extends Controller
 
     public function getValidations()
     {
-        $validations = \App\ExtraModules\ProValidator\Models\Validations::all();
-        return view('ProValidator::lists', compact('validations'));
+        $validations = Sahak\Validator\Models\Validations::all();
+        return view('AutoValidator::lists', compact('validations'));
     }
     public function getCreateValidation()
     {
-        return view('ProValidator::create');
+        return view('AutoValidator::create');
     }
     public function getCreateCopyValidation()
     {
-        return view('ProValidator::create_copy');
+        return view('AutoValidator::create_copy');
     }
 
     public function getSettings()
     {
-        return view('ProValidator::settings');
+        return view('AutoValidator::settings');
     }
 
     /**
@@ -78,8 +78,8 @@ class ProValidatorConroller extends Controller
         if ($rule) {
             $rule = '.' . $rule;
         }
-        if (\View::exists('ProValidator::groups' . $rule)) {
-            $html = \View::make('ProValidator::groups' . $rule)->render();
+        if (\View::exists('AutoValidator::groups' . $rule)) {
+            $html = \View::make('AutoValidator::groups' . $rule)->render();
             return \Response::json(['html' => $html]);
 
         }
@@ -91,7 +91,7 @@ class ProValidatorConroller extends Controller
     {
         $rule = $request->get('rule');
         $group = $request->get('group');
-        $view = "ProValidator::settings.$group.$rule";
+        $view = "AutoValidator::settings.$group.$rule";
         if (\View::exists($view)) {
             $html = \View::make($view)->render();
             return \Response::json(['html' => $html]);
@@ -113,7 +113,7 @@ class ProValidatorConroller extends Controller
         if ($validator->fails()) return redirect()->back()->withErrors($validator->errors());
 
         $data = $request->except(['rules', '_token']);
-        \App\ExtraModules\ProValidator\Models\Validations::create($data + ['code' => $result['rules']]);
+        Sahak\Validator\Models\Validations::create($data + ['code' => $result['rules']]);
 
         return redirect()->back()->with('message', 'Validation successfully created');
     }
