@@ -20,27 +20,11 @@
 |
 */
 
-\Eventy::action('admin.menus', [
-    "title" => "Pro Validator",
-    "custom-link" => "#",
-    "icon" => "fa fa-gavel",
-    "is_core" => "yes",
-    "children" => [
-        [
-            "title" => "Settings",
-            "custom-link" => "/admin/provalidator/settings",
-            "icon" => "fa fa-angle-right",
-            "is_core" => "yes"
-        ],[
-            "title" => "Lists",
-            "custom-link" => "/admin/provalidator/lists",
-            "icon" => "fa fa-angle-right",
-            "is_core" => "yes"
-        ]
-    ]]);
+
 
 //Routes
 Route::get('/', 'Http\Controllers\ProValidatorConroller@getIndex');
+Route::get('/validator.js', 'Http\Controllers\ProValidatorConroller@getJs')->name('auto_validate_js');
 Route::get('/lists', 'Http\Controllers\ProValidatorConroller@getValidations');
 Route::get('/create-validation', 'Http\Controllers\ProValidatorConroller@getCreateValidation');
 Route::post('/create-validation', 'Http\Controllers\ProValidatorConroller@postCreateValidation');

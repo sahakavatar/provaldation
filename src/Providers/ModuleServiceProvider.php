@@ -24,20 +24,22 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->loadTranslationsFrom(__DIR__ . '/../Resources/Lang', 'core_avatar');
+        $this->loadViewsFrom(__DIR__ . '/../Resources/Views', 'core_avatar');
         \Eventy::action('admin.menus', [
-            "title" => "TestProvalidator",
+            "title" => "AutoValidator",
             "custom-link" => "#",
             "icon" => "fa fa-gavel",
             "is_core" => "yes",
             "children" => [
                 [
                     "title" => "Settings",
-                    "custom-link" => "/admin/provalidator/settings",
+                    "custom-link" => "/admin/auto-validator/settings",
                     "icon" => "fa fa-angle-right",
                     "is_core" => "yes"
                 ],[
                     "title" => "Lists",
-                    "custom-link" => "/admin/provalidator/lists",
+                    "custom-link" => "/admin/auto-validator/lists",
                     "icon" => "fa fa-angle-right",
                     "is_core" => "yes"
                 ]
@@ -52,7 +54,7 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->register(RouteServiceProvider::class);
 
     }
 

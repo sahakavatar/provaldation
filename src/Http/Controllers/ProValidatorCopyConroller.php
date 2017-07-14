@@ -9,7 +9,7 @@
  *
  */
 
-namespace App\ExtraModules\ProValidator\Http\Controllers;
+namespace Sahak\Validator\Http\Controllers;
 
 use App\ExtraModules\Test\Models\Test;
 use App\ExtraModules\Test\Models\Validations;

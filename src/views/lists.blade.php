@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-        <a href="{!! url('/admin/provalidator/create-validation') !!}" class="btn btn-success pull-right">Create</a>
-        <a href="{!! url('/admin/provalidator/copy/create-validation') !!}" class="btn btn-success pull-right">Create Copy</a>
+        <a href="{!! url('/admin/auto-validator/create-validation') !!}" class="btn btn-success pull-right">Create</a>
+        <a href="{!! url('/admin/auto-validator/copy/create-validation') !!}" class="btn btn-success pull-right">Create Copy</a>
     <table class="table table-bordered">
         <thead>
         <tr>

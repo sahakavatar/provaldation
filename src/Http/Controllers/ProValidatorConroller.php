@@ -9,7 +9,7 @@
  *
  */
 
-namespace App\ExtraModules\ProValidator\Http\Controllers;
+namespace Sahak\Validator\Http\Controllers;
 
 use App\ExtraModules\Test\Models\Test;
 use App\ExtraModules\Test\Models\Validations;
@@ -39,7 +39,15 @@ class ProValidatorConroller extends Controller
      */
     public function getIndex()
     {
-        return view('ProValidator::index');
+        return view('ProValidator::index'); 1Q1Q1Q  
+    }
+
+    public function getJs()
+    {
+        $js = \File::get(__DIR__ . '/../../Routes/libs/validator.js');
+        $response = \Response::make($js);
+        $response->header('Content-Type', 'text/javascript');
+        return $response;
     }
 
     public function getValidations()

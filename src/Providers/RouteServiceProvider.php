@@ -23,7 +23,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\ExtraModules\ProValidator\Http\Controllers';
+    protected $namespace = 'Sahak\Validator\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -61,10 +61,17 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::group([
+            'domain' => (string)env('DOMAIN'),
             'middleware' => 'web',
-            'namespace'  => $this->namespace,
         ], function ($router) {
-            require module_path('ara', 'Routes/web.php');
+            Route::group([
+                'middleware' => ['admin:Users'],
+                'prefix' => 'admin/auto-validator',
+                'namespace' => $this->namespace,
+            ], function ($router) {
+                //TODO fix path when done
+                require __DIR__.'/../Routes/web.php';
+            });
         });
     }
 
