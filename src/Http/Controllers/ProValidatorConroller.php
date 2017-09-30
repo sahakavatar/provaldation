@@ -19,6 +19,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ExtraModules\Structures;
 use App\Modules\Modules\Models\Routes;
 use Illuminate\Http\Request;
+use Sahakavatar\Cms\Repositories\HookRepository;
 
 /**
  * Class TestController
@@ -64,9 +65,10 @@ class ProValidatorConroller extends Controller
         return view('AutoValidator::create_copy');
     }
 
-    public function getSettings()
+    public function getSettings(HookRepository $hooks)
     {
-        return view('AutoValidator::settings');
+        $cms_hooks=$hooks->getAll();
+        return view('AutoValidator::settings',compact(['cms_hooks']));
     }
 
     /**
