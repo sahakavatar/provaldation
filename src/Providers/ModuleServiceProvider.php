@@ -44,7 +44,7 @@ class ModuleServiceProvider extends ServiceProvider
                     "is_core" => "yes"
                 ]
             ]]);
-        \Sahakavatar\Cms\Models\Routes::registerPages('sahak.avatar/provaldation');
+//        \Sahakavatar\Cms\Models\Routes::registerPages('sahak.avatar/provaldation');
     }
 
 
