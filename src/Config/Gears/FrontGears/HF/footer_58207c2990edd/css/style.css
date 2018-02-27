@@ -4,84 +4,85 @@
     width: 100%;
     display: inline-block;
 }
-.settings_for_footer_12 .my_rows1{
+
+.settings_for_footer_12 .my_rows1 {
     padding: 23px 10px;
 }
 
 /*!*footer*!*/
 /*.new_footer_template_22 footer .social_media, .new_footer_template_22 footer .help, .new_footer_template_22  footer .for_message{*/
-    /*width: 65%;*/
-    /*margin: 0 auto;*/
-    /*margin-top: 26px;*/
+/*width: 65%;*/
+/*margin: 0 auto;*/
+/*margin-top: 26px;*/
 /*}*/
 /*.new_footer_template_22 footer .title > a, .new_footer_template_22 footer .help a{*/
-    /*font-weight: bold;*/
-    /*color: #FFFFFF;;*/
+/*font-weight: bold;*/
+/*color: #FFFFFF;;*/
 /*}*/
 
 /*.new_footer_template_22 footer .help a{*/
-    /*font-size: 16px;*/
+/*font-size: 16px;*/
 /*}*/
 /*.new_footer_template_22 footer .title > a{*/
-    /*font-size: 18px;*/
+/*font-size: 18px;*/
 /*}*/
 /*.new_footer_template_22 footer input:hover, .new_footer_template_22 footer input:focus, .new_footer_template_22 footer input:active, .new_footer_template_22 footer textarea:focus {*/
-    /*outline:0;*/
+/*outline:0;*/
 /*}*/
 /*.new_footer_template_22 footer input {*/
-    /*min-height: 35px;*/
-    /*margin: 15px 0;*/
+/*min-height: 35px;*/
+/*margin: 15px 0;*/
 /*}*/
 /*.new_footer_template_22 footer textarea{*/
-    /*min-height: 77px;*/
-    /*padding-top: 7px;*/
-    /*resize: none;*/
+/*min-height: 77px;*/
+/*padding-top: 7px;*/
+/*resize: none;*/
 /*}*/
 /*.new_footer_template_22 footer input, footer textarea{*/
-    /*background-color: #1e2a36;*/
-    /*color: #9d9d9d;*/
-    /*border: 2px solid #9d9d9d;*/
-    /*width:95%;*/
-    /*text-align: left;*/
-    /*padding-left: 10px;*/
-    /*font-weight: bold;*/
+/*background-color: #1e2a36;*/
+/*color: #9d9d9d;*/
+/*border: 2px solid #9d9d9d;*/
+/*width:95%;*/
+/*text-align: left;*/
+/*padding-left: 10px;*/
+/*font-weight: bold;*/
 /*}*/
 /*.new_footer_template_22 ::-webkit-input-placeholder { !* Chrome/Opera/Safari *!*/
-    /*color: #9d9d9d;*/
+/*color: #9d9d9d;*/
 /*}*/
 /*.new_footer_template_22 ::-moz-placeholder { !* Firefox 19+ *!*/
-    /*color: #9d9d9d;*/
+/*color: #9d9d9d;*/
 /*}*/
 /*.new_footer_template_22 :-ms-input-placeholder { !* IE 10+ *!*/
-    /*color: #9d9d9d;*/
+/*color: #9d9d9d;*/
 /*}*/
 /*.new_footer_template_22 :-moz-placeholder { !* Firefox 18- *!*/
-    /*color: #9d9d9d;*/
+/*color: #9d9d9d;*/
 /*}*/
 /*.new_footer_template_22 footer .social_media .title, .new_footer_template_22 footer .help .title{*/
-    /*padding-bottom: 5px;*/
+/*padding-bottom: 5px;*/
 /*}*/
 /*.new_footer_template_22 footer .icons div{*/
-    /*background-color: transparent;*/
-    /*border-radius: 50%;*/
-    /*width: 55px;*/
-    /*height: 55px;*/
-    /*color: white;*/
-    /*border: 5px solid white;*/
-    /*display: inline-block;*/
-    /*margin-right: 10px;*/
+/*background-color: transparent;*/
+/*border-radius: 50%;*/
+/*width: 55px;*/
+/*height: 55px;*/
+/*color: white;*/
+/*border: 5px solid white;*/
+/*display: inline-block;*/
+/*margin-right: 10px;*/
 /*}*/
 /*.new_footer_template_22 footer .icons, footer .lists{*/
-    /*width: 100%;*/
-    /*border-top: 2px solid #FFFFFF;*/
-    /*padding-top: 19px;*/
+/*width: 100%;*/
+/*border-top: 2px solid #FFFFFF;*/
+/*padding-top: 19px;*/
 /*}*/
 /*.new_footer_template_22 footer .icons div a i{*/
-    /*color: white;*/
-    /*font-size: 25px;*/
-    /*padding: 9px 11px;*/
+/*color: white;*/
+/*font-size: 25px;*/
+/*padding: 9px 11px;*/
 /*}*/
 /*.new_footer_template_22 footer .lists li{*/
-    /*list-style-type: none;*/
+/*list-style-type: none;*/
 /*}*/
 
