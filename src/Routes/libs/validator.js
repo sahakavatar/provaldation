@@ -23,6 +23,7 @@ $(document).ready(function () {
     $('body').on('click','[data-delete]',function () {
         var id =$(this).attr('data-delete');
         $('body').find('[data-parent='+id+']').remove();
+        authoGenCode()
     });
     $('body').on('click','.myTags',function () {
         var id= $(this).attr('data-id');
