@@ -1,4 +1,4 @@
-@extends('cms::layouts.admin')
+@extends('btybug::layouts.admin')
 
 @section('content')
         <a href="{!! url('/admin/auto-validator/create-validation') !!}" class="btn btn-success pull-right">Create</a>

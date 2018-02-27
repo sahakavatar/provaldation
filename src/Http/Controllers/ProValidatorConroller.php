@@ -11,15 +11,15 @@
 
 namespace Sahak\Validator\Http\Controllers;
 
-use App\ExtraModules\Test\Models\Test;
-use App\ExtraModules\Test\Models\Validations;
-use App\helpers\dbhelper;
-use App\helpers\helpers;
+use Sahak\Validator\Models\Test;
+use Sahak\Validator\Models\Validations;
+use Btybug\btybug\Helpers\dbhelper;
+use Btybug\btybug\Helpers\helpers;
 use App\Http\Controllers\Controller;
-use App\Models\ExtraModules\Structures;
-use App\Modules\Modules\Models\Routes;
+use Btybug\btybug\Models\ExtraModules\Structures;
+use Btybug\btybug\Models\Routes;
 use Illuminate\Http\Request;
-use Sahakavatar\Cms\Repositories\HookRepository;
+use Btybug\btybug\Repositories\HookRepository;
 
 /**
  * Class TestController

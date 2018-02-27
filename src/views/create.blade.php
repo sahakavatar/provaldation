@@ -1,4 +1,4 @@
-@extends('cms::layouts.admin')
+@extends('btybug::layouts.admin')
 
 @section('content')
     <div class="col-md-12">
@@ -83,10 +83,10 @@
 
 @stop
 @section('CSS')
-{!! Html::style('/resources/assets/css/jquery.tagit.css') !!}
+{!! Html::style('/public/css/tag-it/jquery.tagit.css') !!}
 {!! Html::style('/public/css/validator.css') !!}
 @stop
 @section('JS')
-    {!! Html::script('/public/js/tag-it.js') !!}
+    {!! Html::script('/public/js/tag-it/tag-it.js') !!}
     {!! Html::script(route('auto_validate_js')) !!}
 @stop

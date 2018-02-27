@@ -2,9 +2,9 @@
 
 namespace Sahak\Validator\Models;
 
-use App\Models\BaseModel;
+use Illuminate\Database\Eloquent\Model;
 
-class Validations extends BaseModel
+class Validations extends Model
 {
     protected $table = 'pro_validator';
 
@@ -16,6 +16,6 @@ class Validations extends BaseModel
 
     public function test()
     {
-        return $this->hasOne('App\ExtraModules\ProValidator\Models\Test','pro_validator_id','id');
+        return $this->hasOne('Sahak\Validator\Models\Test','pro_validator_id','id');
     }
 }

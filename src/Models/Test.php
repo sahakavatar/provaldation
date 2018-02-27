@@ -2,9 +2,9 @@
 
 namespace Sahak\Validator\Models;
 
-use App\Models\BaseModel;
+use Illuminate\Database\Eloquent\Model;
 
-class Test extends BaseModel
+class Test extends Model
 {
     protected $table = 'testing';
 
