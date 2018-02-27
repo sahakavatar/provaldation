@@ -28,7 +28,9 @@ $(document).ready(function () {
         authoGenCode()
     });
     $('body').on('click','.myTags',function () {
+        $('body').find('.myTags').removeClass('border-blue');
         var id= $(this).attr('data-id');
+        $(this).addClass('border-blue');
         $('body').find('.generator-form').hide();
         $('body').find('[data-generator='+id+']').show();
     });

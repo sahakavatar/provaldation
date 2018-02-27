@@ -67,7 +67,7 @@
 
     </script>
     <script type="template" id="v-component-main">
-        <div class="col-md-12  generator-form" style="display: none;" data-generator="{id}">
+        <div class="col-md-12  generator-form" data-parent="{id}" style="display: none;" data-generator="{id}">
             <!-- Select Basic -->
             <div class="form-group m-t-10">
                 <div class="col-md-12">

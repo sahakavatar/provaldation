@@ -98,3 +98,6 @@ label.label-bold{
     padding: 0;
     margin: 0;
 }
+.border-blue{
+    border: 1px solid #00ff18 !important;
+}
