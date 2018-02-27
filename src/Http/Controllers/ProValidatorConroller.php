@@ -50,6 +50,20 @@ class ProValidatorConroller extends Controller
         $response->header('Content-Type', 'text/javascript');
         return $response;
     }
+    public function getJsNew()
+    {
+        $js = \File::get(__DIR__ . '/../../Routes/libs/validator_new.js');
+        $response = \Response::make($js);
+        $response->header('Content-Type', 'text/javascript');
+        return $response;
+    }
+  public function getCss()
+    {
+        $js = \File::get(__DIR__ . '/../../Routes/libs/validator.css');
+        $response = \Response::make($js);
+        $response->header('Content-Type', 'text/css');
+        return $response;
+    }
 
     public function getValidations()
     {

@@ -7,7 +7,9 @@
         <hr>
     </div>
     <div class="row">
-        <div class="col-md-6"></div>
+        <div class="col-md-6 row" id="v-add-place">
+            <div class="col-md-12 "><button class="btn btn-info pull-right " id="v-add-button"><i class="fa fa-plus-circle"></i></button></div>
+        </div>
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-12">
@@ -93,13 +95,28 @@
     </div>
 
 
+<script type="template" id="v-component-1">
+    <div class="col-md-12" data-parent="{id}">
+        <fieldset>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <input   class="form-control" placeholder="title" type="text">
+                        <span class="btn btn-danger input-group-addon" data-delete="{id}"><i class="fa fa-minus"></i></span>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
 
+</script>
 @stop
 @section('CSS')
     {!! Html::style('/public/css/tag-it/jquery.tagit.css') !!}
-    {!! Html::style('/public/css/validator.css') !!}
+    {!! Html::style(route('auto_validate_css')) !!}
 @stop
 @section('JS')
     {!! Html::script('/public/js/tag-it/tag-it.js') !!}
     {!! Html::script(route('auto_validate_js')) !!}
+    {!! Html::script(route('auto_validate_js_new')) !!}
 @stop
