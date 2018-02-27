@@ -1,42 +1,29 @@
 @extends('btybug::layouts.admin')
 
 @section('content')
-    <div class="col-md-12">
+    {!! Form::open() !!}
+    <div class="bb-form-header">
+        <div class="row">
+            <div class="col-md-7">
+                <label>Form name</label>
+                {!! Form::text('title',null,['class' => 'form-name', 'placeholder' => 'Form Name']) !!}
+            </div>
+            <div class="col-md-5">
+                <button type="submit" class="form-save pull-right">Save</button>
+            </div>
+        </div>
     </div>
-    <div class="col-md-12">
-        <hr>
+    <div class="hide">
+        <div class="col-md-9"><input type="text" class="form-control" name="rules" readonly></div>
     </div>
+    {!! Form::close() !!}
+    <br>
     <div class="row">
         <div class="col-md-6 row" id="v-add-place">
             <div class="col-md-12 "><button class="btn btn-info pull-right " id="v-add-button"><i class="fa fa-plus-circle"></i></button></div>
         </div>
         <div class="col-md-6">
             <div class="row">
-                <div class="col-md-12">
-
-                    {!! Form::open() !!}
-                    <div class="form-group  m-b-10 clearfix">
-                        <label class="col-md-3 control-label label-bold" for="title">Title</label>
-                        <div class="col-md-9"><input type="text" class="form-control" name="title" id="title"></div>
-                    </div>
-                    <div class="form-group  m-b-10 clearfix">
-                        <label class="col-md-3 control-label label-bold" for="description">Description</label>
-                        <div class="col-md-9"><textarea name="description" class="form-control" id="description"
-                                                        style="min-height: 148px;"></textarea></div>
-                    </div>
-
-                    <div class="form-group m-b-10 hide clearfix">
-                        <label class="col-md-3 control-label label-bold" for="code">Code</label>
-                        <div class="col-md-9"><input type="text" class="form-control" name="rules" readonly></div>
-                    </div>
-                    <div class="form-group  m-b-10 clearfix text-right">
-                        <button type="submit" class="btn submit-btn btn-submit-pro m-r-15"><i class="fa fa-floppy-o"
-                                                                                              aria-hidden="true"></i>Remember
-                        </button>
-                    </div>
-
-                    {!! Form::close() !!}
-                </div>
                 <div class="col-md-12">
                     <!-- Select Basic -->
                     <div class="form-group m-t-10">
@@ -86,11 +73,8 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
-        <hr>
-
 
     </div>
 
@@ -114,6 +98,7 @@
 @section('CSS')
     {!! Html::style('/public/css/tag-it/jquery.tagit.css') !!}
     {!! Html::style(route('auto_validate_css')) !!}
+    {!! Html::style("public/css/form-builder/form-builder.css") !!}
 @stop
 @section('JS')
     {!! Html::script('/public/js/tag-it/tag-it.js') !!}
