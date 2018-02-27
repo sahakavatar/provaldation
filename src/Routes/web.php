@@ -30,6 +30,7 @@ Route::post('/create-validation', 'ProValidatorConroller@postCreateValidation');
 Route::get('/settings', 'ProValidatorConroller@getSettings',true);
 Route::post('/get-rules-groups', 'ProValidatorConroller@postGetRulesGroups');
 Route::post('/get-rules-settings', 'ProValidatorConroller@postGetRulesSettings');
+
 Route::group(['prefix' => 'copy'], function () {
     Route::get('/', 'ProValidatorCopyConroller@getIndex',true);
     Route::get('/lists', 'ProValidatorCopyConroller@getValidations',true);

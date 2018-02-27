@@ -70,7 +70,7 @@ $(document).ready(function () {
         if ($(this).val() != 0) {
             group = $(this).val();
             var data = {"rule": group};
-            sendajaxvar('/admin/auto-validator/copy/get-rules-groups', data, function (request) {
+            sendajaxvar('/admin/auto-validator/get-rules-groups', data, function (request) {
 
                 $('.pro_validation_rules_group_place').html(request.html);
 
