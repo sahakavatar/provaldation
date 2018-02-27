@@ -66,7 +66,7 @@ $(document).ready(function () {
     var rule = '';
     var customRule = '';
     var group;
-    $('#pro_validation_rules_groups').on('change', function () {
+    $('body').on('change','#pro_validation_rules_groups', function () {
         if ($(this).val() != 0) {
             group = $(this).val();
             var data = {"rule": group};
