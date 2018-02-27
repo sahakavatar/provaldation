@@ -29,25 +29,6 @@
         </div>
         <div class="col-md-6">
             <div class="row">
-
-            </div>
-        </div>
-
-    </div>
-
-
-<script type="template" id="v-component-1">
-    <div class="col-md-12"  data-parent="{id}">
-    <div class="bty-panel-collapse" >
-        <div class="panel_head">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true">
-                <span class="icon"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
-                <span class="title">Panel Title</span>
-            </a>
-            <span class="btn btn-danger input-group-addon btn_minus" data-delete="{id}"><i class="fa fa-minus"></i></span>
-        </div>
-        <div id="collapseOne" class="collapse in" aria-expanded="true" style="">
-            <div class="content">
                 <div class="col-md-12">
                     <!-- Select Basic -->
                     <div class="form-group m-t-10">
@@ -99,24 +80,27 @@
                 </div>
             </div>
         </div>
+
     </div>
+
+
+<script type="template" id="v-component-1">
+    <div class="col-md-12" data-parent="{id}">
+        <fieldset>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <input   class="form-control" placeholder="title" type="text">
+                        <span class="btn btn-danger input-group-addon" data-delete="{id}"><i class="fa fa-minus"></i></span>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
     </div>
 
 </script>
 @stop
 @section('CSS')
-    <style>
-        .panel_head{
-            position: relative;
-        }
-        .panel_head .btn_minus{
-            position: absolute;
-            right: 0;
-            top: 0;
-            padding: 12px 20px 12px 10px;
-            height: 100%;
-        }
-    </style>
     {!! Html::style('/public/css/tag-it/jquery.tagit.css') !!}
     {!! Html::style(route('auto_validate_css')) !!}
     {!! Html::style("public/css/form-builder/form-builder.css") !!}
