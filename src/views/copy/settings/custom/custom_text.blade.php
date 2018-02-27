@@ -26,6 +26,7 @@
 </div>
 <div class="col-md-4 text-right pull-left">
     <button class="btn submit-btn btn-submit-pro m-r-15 pro_add_extra_rule_button"><i class="fa fa-gavel"
-                                                                                aria-hidden="true"></i>Add special rule
+                                                                                      aria-hidden="true"></i>Add special
+        rule
     </button>
 </div>

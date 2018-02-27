@@ -1,5 +1,6 @@
 <h4>required</h4>
-<p>The field under validation must be present in the input data and not empty. A field is considered "empty" if one of the following conditions are true:</p>
+<p>The field under validation must be present in the input data and not empty. A field is considered "empty" if one of
+    the following conditions are true:</p>
 <div class="content-list">
     <ul>
         <li>The value is <code class=" language-php"><span class="token keyword">null</span></code>.</li>

@@ -10,6 +10,7 @@
  */
 
 namespace Sahak\Validator\Providers;
+
 use Illuminate\Support\ServiceProvider;
 
 
@@ -37,7 +38,7 @@ class ModuleServiceProvider extends ServiceProvider
                     "custom-link" => "/admin/auto-validator/settings",
                     "icon" => "fa fa-angle-right",
                     "is_core" => "yes"
-                ],[
+                ], [
                     "title" => "Lists",
                     "custom-link" => "/admin/auto-validator/lists",
                     "icon" => "fa fa-angle-right",

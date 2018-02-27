@@ -10,14 +10,18 @@
   "css": [
     "style.css",
     "setting-body.css"
-  ],    "js": ["js.js"],
-
+  ],
+  "js": [
+    "js.js"
+  ],
   "settings": {
     "file": "settings",
     "css": [
       "style.css"
     ],
-    "js": ["js.js"]
+    "js": [
+      "js.js"
+    ]
   },
   "slug": "new_page_section_857412365421",
   "created_at": 1476346979,

@@ -53,10 +53,10 @@
     {!! HTML::script("/js/UiElements/bb_styles.js?v.5") !!}
     <script>
         $(function () {
-            $('body').on('change','.bb-button-realted-hidden-input',function () {
-                var data={
-                    'id':$(this).attr('data-name'),
-                    'variation':$(this).val()
+            $('body').on('change', '.bb-button-realted-hidden-input', function () {
+                var data = {
+                    'id': $(this).attr('data-name'),
+                    'variation': $(this).val()
                 }
                 $.ajax({
                     type: "post",

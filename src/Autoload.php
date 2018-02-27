@@ -21,11 +21,14 @@ namespace App\ExtraModules\Test;
 class Autoload
 {
 // this function will called only install time
-    public function up($config){
+    public function up($config)
+    {
 //        Test::migrate();
 //        Test::seed();
     }
+
     // this function will called only uninstall time
-    public function down($config){
+    public function down($config)
+    {
     }
 }

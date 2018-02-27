@@ -9,6 +9,7 @@ $(document).ready(function () {
             authoGenCode()
         }
     });
+
     function addTaginput() {
         $("body").find('#special_rules').tagit({
             fieldName: "customRules",
@@ -100,7 +101,7 @@ $(document).ready(function () {
             var html = '<div class="form-group  m-b-10 clearfix">' +
                 '<label class="col-md-3 control-label label-bold" for="title">Select attribute</label>' +
                 '<div class="col-md-9">' +
-                '<input  type="number" class="form-control pro_custom_attr" data-rule="'+customRule+'">' +
+                '<input  type="number" class="form-control pro_custom_attr" data-rule="' + customRule + '">' +
                 '</div> ' +
                 '</div>'
             $('body').find('.pro_extra_area').html(html);

@@ -40,7 +40,7 @@ class ProValidatorConroller extends Controller
      */
     public function getIndex()
     {
-        return view('AutoValidator::index'); 
+        return view('AutoValidator::index');
     }
 
     public function getJs()
@@ -56,10 +56,12 @@ class ProValidatorConroller extends Controller
         $validations = \Sahak\Validator\Models\Validations::all();
         return view('AutoValidator::lists', compact('validations'));
     }
+
     public function getCreateValidation()
     {
         return view('AutoValidator::create');
     }
+
     public function getCreateCopyValidation()
     {
         return view('AutoValidator::create_copy');
@@ -67,8 +69,8 @@ class ProValidatorConroller extends Controller
 
     public function getSettings(HookRepository $hooks)
     {
-        $cms_hooks=$hooks->getAll();
-        return view('AutoValidator::settings',compact(['cms_hooks']));
+        $cms_hooks = $hooks->getAll();
+        return view('AutoValidator::settings', compact(['cms_hooks']));
     }
 
     /**

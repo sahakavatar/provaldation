@@ -5,4 +5,6 @@
     </div>
 </div>
 <h4>max:<em>value</em></h4>
-<p>The field under validation must be less than or equal to a maximum <em>value</em>. Strings, numerics, and files are evaluated in the same fashion as the <a href="https://laravel.com/docs/5.4/validation#rule-size" target="_blank"><code class=" language-php">size</code></a> rule.</p>
+<p>The field under validation must be less than or equal to a maximum <em>value</em>. Strings, numerics, and files are
+    evaluated in the same fashion as the <a href="https://laravel.com/docs/5.4/validation#rule-size"
+                                            target="_blank"><code class=" language-php">size</code></a> rule.</p>

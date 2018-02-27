@@ -47,10 +47,12 @@ class ProValidatorCopyConroller extends Controller
         $validations = \Sahak\Validator\Models\Validations::all();
         return view('AutoValidator::copy.copy.lists', compact('validations'));
     }
+
     public function getCreateValidation()
     {
         return view('AutoValidator::copy.create');
     }
+
     public function getCreateCopyValidation()
     {
         return view('AutoValidator::copy.create_copy');

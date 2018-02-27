@@ -2,12 +2,13 @@
     <div class="col-xs-12 ">
         <div class="panel panelDarkBlack">
             <div class="panel-heading">
-                <a data-toggle="collapse" href="#header-widgets"><span class="panelArrow"><i class="fa fa-angle-down"></i></span>Breadcrumb Settings</a>
+                <a data-toggle="collapse" href="#header-widgets"><span class="panelArrow"><i
+                                class="fa fa-angle-down"></i></span>Breadcrumb Settings</a>
             </div>
             <div id="header-widgets" class="panel-collapse collapse in">
                 <div class="panel-body">
                     <div class="form-horizontal">
-					<!-- Settings -->
+                        <!-- Settings -->
                         <div class="form-group">
                             <label class="col-md-4 labelTitle" for="container_style">Container Style</label>
                             <div class="col-md-8">

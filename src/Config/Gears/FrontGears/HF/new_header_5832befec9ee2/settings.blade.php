@@ -1,18 +1,18 @@
 <div id="settings_div111">
 
-        <div class="form-group my_rows1">
-            <label for="newcontainer" class="col-sm-4 labelTitle">Header style</label>
-            <div class="col-sm-8">
-                {!! BBbutton('styles','newcontainer','Select Header Style',['class'=>'form-control input-md','data-type'=>'container','model'=>$settings]) !!}
-            </div>
+    <div class="form-group my_rows1">
+        <label for="newcontainer" class="col-sm-4 labelTitle">Header style</label>
+        <div class="col-sm-8">
+            {!! BBbutton('styles','newcontainer','Select Header Style',['class'=>'form-control input-md','data-type'=>'container','model'=>$settings]) !!}
         </div>
+    </div>
 
-        <div class="form-group my_rows1">
-            <label class="col-md-4 control-label" for="sitenametextstyle">Site Name Text Style</label>
-            <div class="col-md-8">
-                {!! BBbutton('styles','sitenametextstyle','Select Site Name Text Style',['class'=>'form-control','data-type'=>'text','model'=>$settings]) !!}
-            </div>
+    <div class="form-group my_rows1">
+        <label class="col-md-4 control-label" for="sitenametextstyle">Site Name Text Style</label>
+        <div class="col-md-8">
+            {!! BBbutton('styles','sitenametextstyle','Select Site Name Text Style',['class'=>'form-control','data-type'=>'text','model'=>$settings]) !!}
         </div>
+    </div>
 
     <div class="form-group my_rows1">
         <label class="col-md-4 control-label" for="socialiconswidget_11">Social Icons Widget</label>

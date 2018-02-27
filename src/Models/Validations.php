@@ -16,6 +16,6 @@ class Validations extends Model
 
     public function test()
     {
-        return $this->hasOne('Sahak\Validator\Models\Test','pro_validator_id','id');
+        return $this->hasOne('Sahak\Validator\Models\Test', 'pro_validator_id', 'id');
     }
 }

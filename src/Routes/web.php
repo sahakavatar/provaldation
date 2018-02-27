@@ -21,7 +21,6 @@
 */
 
 
-
 //Routes
 Route::get('/', 'ProValidatorConroller@getIndex');
 Route::get('/validator.js', 'ProValidatorConroller@getJs')->name('auto_validate_js');
@@ -31,7 +30,7 @@ Route::post('/create-validation', 'ProValidatorConroller@postCreateValidation');
 Route::get('/settings', 'ProValidatorConroller@getSettings');
 Route::post('/get-rules-groups', 'ProValidatorConroller@postGetRulesGroups');
 Route::post('/get-rules-settings', 'ProValidatorConroller@postGetRulesSettings');
-Route::group(['prefix'=>'copy'],function (){
+Route::group(['prefix' => 'copy'], function () {
     Route::get('/', 'ProValidatorCopyConroller@getIndex');
     Route::get('/lists', 'ProValidatorCopyConroller@getValidations');
     Route::get('/create-validation', 'ProValidatorCopyConroller@getCreateValidation');

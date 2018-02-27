@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="col-md-12" style="">
-                    <div  class="m-b-10 pro_validator_settings_area" id="pro_validator_settings_area">
+                    <div class="m-b-10 pro_validator_settings_area" id="pro_validator_settings_area">
 
                     </div>
                 </div>
@@ -75,14 +75,17 @@
             </div>
             <div class="form-group  m-b-10 clearfix">
                 <label class="col-md-3 control-label label-bold" for="description">Description</label>
-                <div class="col-md-9"><textarea name="description" class="form-control" id="description" style="min-height: 148px;"></textarea></div>
+                <div class="col-md-9"><textarea name="description" class="form-control" id="description"
+                                                style="min-height: 148px;"></textarea></div>
             </div>
             <div class="form-group m-b-10 clearfix">
                 <label class="col-md-3 control-label label-bold" for="code">Code</label>
                 <div class="col-md-9"><input type="text" class="form-control" name="rules" readonly></div>
             </div>
             <div class="form-group  m-b-10 clearfix text-right">
-                <button type="submit" class="btn submit-btn btn-submit-pro m-r-15"><i class="fa fa-floppy-o" aria-hidden="true"></i>Remember</button>
+                <button type="submit" class="btn submit-btn btn-submit-pro m-r-15"><i class="fa fa-floppy-o"
+                                                                                      aria-hidden="true"></i>Remember
+                </button>
             </div>
 
             {!! Form::close() !!}
