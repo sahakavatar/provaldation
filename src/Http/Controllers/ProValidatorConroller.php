@@ -124,9 +124,9 @@ class ProValidatorConroller extends Controller
         if ($validator->fails()) return redirect()->back()->withErrors($validator->errors());
 
         $data = $request->except(['rules', '_token']);
-        Sahak\Validator\Models\Validations::create($data + ['code' => $result['rules']]);
+        Validations::create($data + ['code' => $result['rules']]);
 
-        return redirect()->back()->with('message', 'Validation successfully created');
+        return redirect()->route('auto_validate_list')->with('message', 'Validation successfully created');
     }
 
 
