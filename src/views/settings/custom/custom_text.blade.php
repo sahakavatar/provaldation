@@ -1,6 +1,6 @@
 <label class="col-md-3 control-label label-bold" for="selectbasic">Select Rule</label>
 <div class="col-md-9">
-    <select id="customs" class="form-control">
+    <select  class="form-control customs-v-rules">
         <option value="0">Select Rule</option>
         <option value="alpha">Alpha</option>
         <option value="integer">Integer</option>

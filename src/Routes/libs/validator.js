@@ -15,10 +15,12 @@ $(document).ready(function () {
             afterTagRemoved: function (event, ui) {
                 authoGenCode();
             },
+            tagLimit:1,
             afterTagAdded: function (event, ui) {
                 authoGenCode()
             }
         });
+        $('body').find('.ui-autocomplete-input').attr('readonly',true);
     });
     $('body').on('click','[data-delete]',function () {
         var id =$(this).attr('data-delete');
@@ -96,12 +98,16 @@ $(document).ready(function () {
             sendajaxvar('/admin/auto-validator/get-rules-groups', data, function (request) {
                 var html = request.html;
                 html = html.replace(/{id}/g, id);
-                $('body').find('[data-generator=' + id + ']').find('.pro_validation_rules_group_place').html(html);
+                $('body').find('[data-generator=' + id + ']')
+                    .find('.pro_validation_rules_group_place')
+                    .html(html);
 
             });
 
         } else {
-            $('body').find('[data-generator=' + id + ']').find('.pro_validator_settings_area').html('Area for rule attributes');
+            $('body').find('[data-generator=' + id + ']')
+                .find('.pro_validator_settings_area')
+                .html('Area for rule attributes');
         }
     });
 
@@ -112,15 +118,19 @@ $(document).ready(function () {
             var data = {"rule": $(this).val(), 'group': group};
             var addRuleButton=addButton.replace(/{id}/g, id);
             sendajaxvar('/admin/auto-validator/get-rules-settings', data, function (request) {
-                $('body').find('[data-generator=' + id + ']').find('.pro_validator_settings_area').html(request.html + addRuleButton);
+                $('body').find('[data-generator=' + id + ']')
+                    .find('.pro_validator_settings_area')
+                    .html(request.html + addRuleButton);
 
             });
 
         } else {
-            $('body').find('[data-generator=' + id + ']').find('.pro_validator_settings_area').html('Area for rule attributes');
+            $('body').find('[data-generator=' + id + ']')
+                .find('.pro_validator_settings_area')
+                .html('Area for rule attributes');
         }
     });
-    $('body').on('change', '#customs', function () {
+    $('body').on('change', '.customs-v-rules', function () {
         if ($(this).val() != 0) {
             customRule = $(this).val();
             var html = '<div class="form-group  m-b-10 clearfix">' +
@@ -128,7 +138,7 @@ $(document).ready(function () {
                 '<div class="col-md-9">' +
                 '<input  type="number" class="form-control pro_custom_attr" data-rule="' + customRule + '">' +
                 '</div> ' +
-                '</div>'
+                '</div>';
             $('body').find('.pro_extra_area').html(html);
         }
     });
@@ -146,6 +156,7 @@ $(document).ready(function () {
                 }
             });
         }
+        $('body').find("ul[data-id="+id+"]").find('.tagit-choice').remove();
         $('body').find("ul[data-id="+id+"]").tagit("createTag", redyRule);
     });
     $('body').on('click', '.pro_add_extra_rule_button', function () {
