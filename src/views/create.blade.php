@@ -5,8 +5,8 @@
     <div class="bb-form-header">
         <div class="row">
             <div class="col-md-7">
-                <label>Form name</label>
-                {!! Form::text('title',null,['class' => 'form-name', 'placeholder' => 'Form Name']) !!}
+                <label>Title</label>
+                {!! Form::text('title',null,['class' => 'form-name', 'placeholder' => 'title']) !!}
             </div>
             <div class="col-md-5">
                 <button type="submit" class="form-save pull-right">Save</button>
