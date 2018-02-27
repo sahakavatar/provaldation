@@ -11,6 +11,7 @@
 
 namespace Sahak\Validator\Providers;
 
+use Btybug\btybug\Models\Routes;
 use Illuminate\Support\ServiceProvider;
 
 
@@ -45,7 +46,7 @@ class ModuleServiceProvider extends ServiceProvider
                     "is_core" => "yes"
                 ]
             ]]);
-        \Sahakavatar\Cms\Models\Routes::registerPages('sahak.avatar/provaldation');
+        Routes::registerPages('sahak.avatar/provaldation');
     }
 
 
