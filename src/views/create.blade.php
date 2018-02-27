@@ -66,6 +66,7 @@
                 <div class="col-md-9"><textarea name="description" class="form-control" id="description"
                                                 style="min-height: 148px;"></textarea></div>
             </div>
+            
             <div class="form-group m-b-10 clearfix">
                 <label class="col-md-3 control-label label-bold" for="code">Code</label>
                 <div class="col-md-9"><input type="text" class="form-control" name="rules" readonly></div>
