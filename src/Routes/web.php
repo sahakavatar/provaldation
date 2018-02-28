@@ -24,6 +24,7 @@
 //Routes
 Route::get('/', 'ProValidatorController@getIndex',true);
 Route::get('/validator.js', 'ProValidatorController@getJs',true)->name('auto_validate_js');
+Route::get('/validator_copy.js', 'ProValidatorCopyController@getJs',true)->name('auto_validate_js_copy');
 Route::get('/validator.css', 'ProValidatorController@getCss',true)->name('auto_validate_css');
 Route::get('/lists', 'ProValidatorController@getValidations',true)->name('auto_validate_list');
 Route::get('/create-validation', 'ProValidatorController@getCreateValidation',true);

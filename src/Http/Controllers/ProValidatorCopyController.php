@@ -45,7 +45,7 @@ class ProValidatorCopyController extends Controller
 
     public function getJs()
     {
-        $js = \File::get(__DIR__ . '/../../Routes/libs/validator.js');
+        $js = \File::get(__DIR__ . '/../../Routes/libs/validator_copy.js');
         $response = \Response::make($js);
         $response->header('Content-Type', 'text/javascript');
         return $response;

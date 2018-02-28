@@ -127,5 +127,5 @@
 @stop
 @section('JS')
     {!! Html::script('/public/js/tag-it/tag-it.js') !!}
-    {!! Html::script(route('auto_validate_js')) !!}
+    {!! Html::script(route('auto_validate_js_copy')) !!}
 @stop

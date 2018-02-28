@@ -18,7 +18,6 @@
         @if(count($validations))
             @foreach($validations as $validation)
                 <tr>
-
                     <td scope="row">{!! $validation->id !!}</td>
                     <td>{!! $validation->title !!}</td>
                     <td>{!! $validation->code !!}</td>
@@ -35,14 +34,11 @@
                     NO Vlidations
                 </td>
             </tr>
-
         @endif
         </tbody>
     </table>
-
 @stop
 @section('CSS')
-
 @stop
 @section('JS')
 @stop
