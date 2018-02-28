@@ -11,20 +11,21 @@
 
 namespace Sahak\Validator\Http\Controllers;
 
-use App\ExtraModules\Test\Models\Test;
-use App\ExtraModules\Test\Models\Validations;
-use App\helpers\dbhelper;
-use App\helpers\helpers;
+use Sahak\Validator\Models\Test;
+use Sahak\Validator\Models\Validations;
+use Btybug\btybug\Helpers\dbhelper;
+use Btybug\btybug\Helpers\helpers;
 use App\Http\Controllers\Controller;
-use App\Models\ExtraModules\Structures;
-use App\Modules\Modules\Models\Routes;
+use Btybug\btybug\Models\ExtraModules\Structures;
+use Btybug\btybug\Models\Routes;
 use Illuminate\Http\Request;
+use Btybug\btybug\Repositories\HookRepository;
 
 /**
  * Class TestController
  * @package App\ExtraModules\Test\Http\Controllers
  */
-class ProValidatorCopyConroller extends Controller
+class ProValidatorController extends Controller
 {
     /**
      * TestController constructor.
@@ -39,28 +40,44 @@ class ProValidatorCopyConroller extends Controller
      */
     public function getIndex()
     {
-        return view('AutoValidator::copy.index');
+        return view('AutoValidator::index');
+    }
+
+    public function getJs()
+    {
+        $js = \File::get(__DIR__ . '/../../Routes/libs/validator.js');
+        $response = \Response::make($js);
+        $response->header('Content-Type', 'text/javascript');
+        return $response;
+    }
+  public function getCss()
+    {
+        $js = \File::get(__DIR__ . '/../../Routes/libs/validator.css');
+        $response = \Response::make($js);
+        $response->header('Content-Type', 'text/css');
+        return $response;
     }
 
     public function getValidations()
     {
         $validations = \Sahak\Validator\Models\Validations::all();
-        return view('AutoValidator::copy.copy.lists', compact('validations'));
+        return view('AutoValidator::lists', compact('validations'));
     }
 
     public function getCreateValidation()
     {
-        return view('AutoValidator::copy.create');
+        return view('AutoValidator::create');
     }
 
     public function getCreateCopyValidation()
     {
-        return view('AutoValidator::copy.create_copy');
+        return view('AutoValidator::create_copy');
     }
 
-    public function getSettings()
+    public function getSettings(HookRepository $hooks)
     {
-        return view('AutoValidator::copy.settings');
+        $cms_hooks = $hooks->getAll();
+        return view('AutoValidator::settings', compact(['cms_hooks']));
     }
 
     /**
@@ -72,8 +89,8 @@ class ProValidatorCopyConroller extends Controller
         if ($rule) {
             $rule = '.' . $rule;
         }
-        if (\View::exists('AutoValidator::copy.groups' . $rule)) {
-            $html = \View::make('AutoValidator::copy.groups' . $rule)->render();
+        if (\View::exists('AutoValidator::groups' . $rule)) {
+            $html = \View::make('AutoValidator::groups' . $rule)->render();
             return \Response::json(['html' => $html]);
 
         }
@@ -85,7 +102,7 @@ class ProValidatorCopyConroller extends Controller
     {
         $rule = $request->get('rule');
         $group = $request->get('group');
-        $view = "AutoValidator::copy.settings.$group.$rule";
+        $view = "AutoValidator::settings.$group.$rule";
         if (\View::exists($view)) {
             $html = \View::make($view)->render();
             return \Response::json(['html' => $html]);
@@ -107,9 +124,9 @@ class ProValidatorCopyConroller extends Controller
         if ($validator->fails()) return redirect()->back()->withErrors($validator->errors());
 
         $data = $request->except(['rules', '_token']);
-        \Sahak\Validator\Models\Validations::create($data + ['code' => $result['rules']]);
+        Validations::create($data + ['code' => $result['rules']]);
 
-        return redirect()->back()->with('message', 'Validation successfully created');
+        return redirect()->route('auto_validate_list')->with('message', 'Validation successfully created');
     }
 
 

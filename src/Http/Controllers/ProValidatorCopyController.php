@@ -25,7 +25,7 @@ use Btybug\btybug\Repositories\HookRepository;
  * Class TestController
  * @package App\ExtraModules\Test\Http\Controllers
  */
-class ProValidatorConroller extends Controller
+class ProValidatorCopyController extends Controller
 {
     /**
      * TestController constructor.
@@ -40,7 +40,7 @@ class ProValidatorConroller extends Controller
      */
     public function getIndex()
     {
-        return view('AutoValidator::index');
+        return view('AutoValidator::copy.index');
     }
 
     public function getJs()
@@ -50,7 +50,7 @@ class ProValidatorConroller extends Controller
         $response->header('Content-Type', 'text/javascript');
         return $response;
     }
-  public function getCss()
+    public function getCss()
     {
         $js = \File::get(__DIR__ . '/../../Routes/libs/validator.css');
         $response = \Response::make($js);
@@ -61,23 +61,23 @@ class ProValidatorConroller extends Controller
     public function getValidations()
     {
         $validations = \Sahak\Validator\Models\Validations::all();
-        return view('AutoValidator::lists', compact('validations'));
+        return view('AutoValidator::copy.lists', compact('validations'));
     }
 
     public function getCreateValidation()
     {
-        return view('AutoValidator::create');
+        return view('AutoValidator::copy.create');
     }
 
     public function getCreateCopyValidation()
     {
-        return view('AutoValidator::create_copy');
+        return view('AutoValidator::copy.create_copy');
     }
 
     public function getSettings(HookRepository $hooks)
     {
         $cms_hooks = $hooks->getAll();
-        return view('AutoValidator::settings', compact(['cms_hooks']));
+        return view('AutoValidator::copy.settings', compact(['cms_hooks']));
     }
 
     /**
@@ -89,8 +89,8 @@ class ProValidatorConroller extends Controller
         if ($rule) {
             $rule = '.' . $rule;
         }
-        if (\View::exists('AutoValidator::groups' . $rule)) {
-            $html = \View::make('AutoValidator::groups' . $rule)->render();
+        if (\View::exists('AutoValidator::copy.groups' . $rule)) {
+            $html = \View::make('AutoValidator::copy.groups' . $rule)->render();
             return \Response::json(['html' => $html]);
 
         }
@@ -102,7 +102,7 @@ class ProValidatorConroller extends Controller
     {
         $rule = $request->get('rule');
         $group = $request->get('group');
-        $view = "AutoValidator::settings.$group.$rule";
+        $view = "AutoValidator::copy.settings.$group.$rule";
         if (\View::exists($view)) {
             $html = \View::make($view)->render();
             return \Response::json(['html' => $html]);

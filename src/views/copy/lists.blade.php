@@ -2,7 +2,7 @@
 
 @section('content')
     <a href="{!! url('/admin/auto-validator/create-validation') !!}" class="btn btn-success pull-right">Create</a>
-    <a href="{!! url('/admin/auto-validator/create-copy-validation') !!}" class="btn btn-success pull-right">Create
+    <a href="{!! url('/admin/auto-validator/copy/create-validation') !!}" class="btn btn-success pull-right">Create
         Copy</a>
     <table class="table table-bordered">
         <thead>
@@ -15,9 +15,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            @if(count($validations))
-                @foreach($validations as $validation)
+        @if(count($validations))
+            @foreach($validations as $validation)
+                <tr>
+
                     <td scope="row">{!! $validation->id !!}</td>
                     <td>{!! $validation->title !!}</td>
                     <td>{!! $validation->code !!}</td>
@@ -26,13 +27,16 @@
                         <button class="btn btn-warning">Dlete</button>
                         <button class="btn btn-info">Edit</button>
                     </td>
-                @endforeach
-            @else
+                </tr>
+            @endforeach
+        @else
+            <tr>
                 <td colspan="5" class="text-center">
                     NO Vlidations
                 </td>
-            @endif
-        </tr>
+            </tr>
+
+        @endif
         </tbody>
     </table>
 
