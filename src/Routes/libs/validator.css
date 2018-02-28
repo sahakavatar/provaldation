@@ -7,18 +7,16 @@ body {
 
 }
 .pro_validator_settings_area{
+    box-shadow: 11px 17px 23px;
     min-height: 238px;
     border-color: rgba(12, 12, 12, 0.2);
-    -webkit-box-shadow: 0 5px 20px rgba(0,0,0,.1);
-    box-shadow: 0 5px 20px rgba(0,0,0,.1);
     background: #fff;
     border-width: 1px;
     border-style: solid;
     padding: 30px;
     width: 93%;
     margin: 0 auto;
-    margin-bottom: 1.875em!important;
-    border-radius: 5px;
+    margin-bottom: 1.875em !important;
     background: rgb(245,246,246); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(245,246,246,1) 0%, rgba(219,220,226,1) 25%, rgba(184,186,198,1) 62%, rgba(245,246,246,1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, rgba(245,246,246,1) 0%,rgba(219,220,226,1) 25%,rgba(184,186,198,1) 62%,rgba(245,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
