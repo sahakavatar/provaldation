@@ -87,7 +87,7 @@
 @stop
 @section('CSS')
     {!! Html::style('/public/css/tag-it/jquery.tagit.css') !!}
-    {!! Html::style('/public/css/validator.css') !!}
+    {!! Html::style(route('auto_validate_css')) !!}
     {!! Html::style("public/css/form-builder/form-builder.css") !!}
 @stop
 @section('JS')
