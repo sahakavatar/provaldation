@@ -1,7 +1,7 @@
 @extends('btybug::layouts.admin')
 
 @section('content')
-    {!! Form::open() !!}
+    {!! Form::model($validation) !!}
     <div class="bb-form-header">
         <div class="row">
             <div class="col-md-7">
@@ -16,12 +16,14 @@
 
     <div class="form-group  m-b-10 clearfix">
         <label class="col-md-3 control-label label-bold" for="description">Description</label>
-        <div class="col-md-9"><textarea name="description" class="form-control" id="description"
-                                        style="min-height: 148px;"></textarea></div>
+        <div class="col-md-9">
+            {!! Form::textarea('description',null,['class'=>'form-control','id'=>'description']) !!}
+            </div>
     </div>
     <div class="form-group  m-b-10 clearfix">
         <label class="col-md-3 control-label label-bold" for="description">Validation</label>
-        <div class="col-md-9"><input type="text" class="form-control" name="rules" readonly></div>
+        <div class="col-md-9">
+            {!! Form::text('rule',($validation)?$validation->code:null,['class'=>'form-control','readonly']) !!}
     </div>
     {!! Form::close() !!}
     <br>

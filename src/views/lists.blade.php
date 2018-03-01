@@ -24,7 +24,7 @@
                     <td>{!! $validation->description !!}</td>
                     <td>
                         <button class="btn btn-warning">Dlete</button>
-                        <button class="btn btn-info">Edit</button>
+                        <a href="{!! route('create_and_edit_validation',$validation->id) !!}" class="btn btn-info">Edit</a>
                     </td>
                 </tr>
             @endforeach
