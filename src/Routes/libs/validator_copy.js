@@ -33,7 +33,7 @@ $(document).ready(function () {
             }
 
         });
-        $('input[name=rules]').val(rules)
+        $('input[name=code]').val(rules)
     }
 
     var addButton = '<div class="form-group m-b-10 clearfix">' +

@@ -37,7 +37,7 @@ Route::group(['prefix' => 'copy'], function () {
     Route::get('/', 'ProValidatorCopyController@getIndex',true);
     Route::get('/lists', 'ProValidatorCopyController@getValidations',true);
     Route::get('/create-validation/{id?}', 'ProValidatorCopyController@getCreateValidation',true)->name('create_and_edit_validation');
-    Route::post('/create-validation', 'ProValidatorCopyController@postCreateValidation');
+    Route::post('/create-validation/{id?}', 'ProValidatorCopyController@postCreateValidation');
     Route::get('/settings', 'ProValidatorCopyController@getSettings',true);
     Route::post('/get-rules-groups', 'ProValidatorCopyController@postGetRulesGroups');
     Route::post('/get-rules-settings', 'ProValidatorCopyController@postGetRulesSettings');

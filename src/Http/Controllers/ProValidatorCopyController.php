@@ -116,21 +116,26 @@ class ProValidatorCopyController extends Controller
         return \Response::json(['html' => 'Rule is not configured']);
     }
 
-    public function postCreateValidation(Request $request)
+    public function postCreateValidation(Request $request,$id=null)
     {
         $result = $request->except('_token');
-
         $validator = \Validator::make($result, [
-            'title' => 'required',
-            'rules' => 'required'
+            'title' =>'required|unique:pro_validator,title'.(($id)?(','.$id):null),
+            'code' => 'required'
         ]);
 
         if ($validator->fails()) return redirect()->back()->withErrors($validator->errors());
 
-        $data = $request->except(['rules', '_token']);
-        Validations::create($data + ['code' => $result['rules']]);
-
-        return redirect()->route('auto_validate_list')->with('message', 'Validation successfully created');
+        $data = $request->except(['_token']);
+        if($id){
+            $validation=Validations::find($id);
+            $validation->update($data);
+            $message='Validation successfully updated';
+        }else{
+            $message='Validation successfully created';
+            Validations::create($data);
+        }
+        return redirect()->route('auto_validate_list')->with('message', $message);
     }
 
 
