@@ -25,12 +25,9 @@
     </div>
     {!! Form::close() !!}
     <br>
-    <div class="col-md-12">
-    </div>
-    <div class="col-md-12">
-        <hr>
-    </div>
+
     <div class="row">
+        <div class="col-md-2"></div>
         <div class="col-md-8">
             <!-- Select Basic -->
             <div class="form-group m-t-10">
@@ -78,8 +75,7 @@
             </div>
 
         </div>
-        <hr>
-
+        <div class="col-md-2"></div>
     </div>
 
 
