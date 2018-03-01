@@ -4,6 +4,7 @@
         <option value="0">Select Rule</option>
         <option value="present">Present</option>
         <option value="required">Required</option>
+        <option value="unique">Unique</option>
         <option value="nullable">Nullable</option>
         <option value="in">In</option>
     </select>
