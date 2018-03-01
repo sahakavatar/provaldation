@@ -7,5 +7,6 @@
         <option value="unique">Unique</option>
         <option value="nullable">Nullable</option>
         <option value="in">In</option>
+        <option value="regex">Regex</option>
     </select>
 </div>
