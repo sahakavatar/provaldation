@@ -10,7 +10,6 @@
         <option value="string">String</option>
         <option value="active_url">Active URL</option>
         <option value="url">URL</option>
-        <option value="exists">Exists</option>
         <option value="size">Size</option>
         <option value="characters">Characters</option>
         <option value="digits">Digits</option>
