@@ -15,10 +15,9 @@
         </tr>
         </thead>
         <tbody>
-        @if(count($validations))
-            @foreach($validations as $validation)
-                <tr>
-
+        <tr>
+            @if(count($validations))
+                @foreach($validations as $validation)
                     <td scope="row">{!! $validation->id !!}</td>
                     <td>{!! $validation->title !!}</td>
                     <td>{!! $validation->code !!}</td>
@@ -27,16 +26,13 @@
                         <button class="btn btn-warning">Dlete</button>
                         <button class="btn btn-info">Edit</button>
                     </td>
-                </tr>
-            @endforeach
-        @else
-            <tr>
+                @endforeach
+            @else
                 <td colspan="5" class="text-center">
                     NO Vlidations
                 </td>
-            </tr>
-
-        @endif
+            @endif
+        </tr>
         </tbody>
     </table>
 

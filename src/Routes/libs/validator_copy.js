@@ -1,40 +1,14 @@
 $(document).ready(function () {
     var dd = console.log;
-
-    $('#v-add-button').on('click', function () {
-        var id = Date.now();
-        var html = $('#v-component-1').html();
-        var genHtml = $('#v-component-main').html();
-        genHtml = genHtml.replace(/{id}/g, id);
-        html = html.replace(/{id}/g, id);
-        $('#v-add-place').append(html);
-        $('.v-generator-area').append(genHtml);
-
-        $('body').find(".myTags").tagit({
-            fieldName: "skills",
-            afterTagRemoved: function (event, ui) {
-                authoGenCode();
-            },
-            tagLimit:1,
-            afterTagAdded: function (event, ui) {
-                authoGenCode()
-            }
-        });
-        $('body').find('.ui-autocomplete-input').attr('readonly',true);
+    $("#myTags").tagit({
+        fieldName: "skills",
+        afterTagRemoved: function (event, ui) {
+            authoGenCode();
+        },
+        afterTagAdded: function (event, ui) {
+            authoGenCode()
+        }
     });
-    $('body').on('click','[data-delete]',function () {
-        var id =$(this).attr('data-delete');
-        $('body').find('[data-parent='+id+']').remove();
-        authoGenCode()
-    });
-    $('body').on('click','.myTags',function () {
-        $('body').find('.myTags').removeClass('border-blue');
-        var id= $(this).attr('data-id');
-        $(this).addClass('border-blue');
-        $('body').find('.generator-form').hide();
-        $('body').find('[data-generator='+id+']').show();
-    });
-
 
     function addTaginput() {
         $("body").find('#special_rules').tagit({
@@ -49,7 +23,7 @@ $(document).ready(function () {
     }
 
     function authoGenCode() {
-        var tagits = $('.myTags').find('.tagit-choice');
+        var tagits = $('#myTags').find('.tagit-choice');
         var rules = '';
         $.each(tagits, function (k, v) {
             if (k) {
@@ -65,11 +39,11 @@ $(document).ready(function () {
     var addButton = '<div class="form-group m-b-10 clearfix">' +
         '<label class="col-md-4 control-label text-center" for="singlebutton"></label>' +
         '<div class="col-md-8 text-right">' +
-        '<button data-id="{id}" class="btn submit-btn btn-submit-pro m-r-15 pro_add_rule_button">' +
-        '<i class="fa fa-gavel" aria-hidden="true"></i>Update' +
+        '<button class="btn submit-btn btn-submit-pro m-r-15 pro_add_rule_button">' +
+        '<i class="fa fa-gavel" aria-hidden="true"></i>Add rule' +
         '</button> ' +
         '</div>' +
-        '</div>';
+        '</div>'
 
     function sendajaxvar(url, data, success) {
         $.ajax({
@@ -92,47 +66,36 @@ $(document).ready(function () {
     var rule = '';
     var customRule = '';
     var group;
-    $('body').on('change', '.pro_validation_rules_groups', function () {
-        var id = $(this).attr('data-id');
+    $('#pro_validation_rules_groups').on('change', function () {
         if ($(this).val() != 0) {
             group = $(this).val();
             var data = {"rule": group};
             sendajaxvar('/admin/auto-validator/copy/get-rules-groups', data, function (request) {
-                var html = request.html;
-                html = html.replace(/{id}/g, id);
-                $('body').find('[data-generator=' + id + ']')
-                    .find('.pro_validation_rules_group_place')
-                    .html(html);
 
-            });
+                $('.pro_validation_rules_group_place').html(request.html);
+
+            })
 
         } else {
-            $('body').find('[data-generator=' + id + ']')
-                .find('.pro_validator_settings_area')
-                .html('Area for rule attributes');
+            $('#pro_validator_settings_area').html('Area for rule attributes');
         }
     });
 
-    $('body').on('change', '.pro_validation_rules', function () {
-        var id = $(this).attr('data-id');
+    $('body').on('change', '#pro_validation_rules', function () {
         if ($(this).val() != 0) {
             rule = $(this).val();
             var data = {"rule": $(this).val(), 'group': group};
-            var addRuleButton=addButton.replace(/{id}/g, id);
             sendajaxvar('/admin/auto-validator/copy/get-rules-settings', data, function (request) {
-                $('body').find('[data-generator=' + id + ']')
-                    .find('.pro_validator_settings_area')
-                    .html(request.html + addRuleButton);
 
-            });
+                $('#pro_validator_settings_area').html(request.html + addButton);
+
+            })
 
         } else {
-            $('body').find('[data-generator=' + id + ']')
-                .find('.pro_validator_settings_area')
-                .html('Area for rule attributes');
+            $('#pro_validator_settings_area').html('Area for rule attributes');
         }
     });
-    $('body').on('change', '.customs-v-rules', function () {
+    $('body').on('change', '#customs', function () {
         if ($(this).val() != 0) {
             customRule = $(this).val();
             var html = '<div class="form-group  m-b-10 clearfix">' +
@@ -140,12 +103,11 @@ $(document).ready(function () {
                 '<div class="col-md-9">' +
                 '<input  type="number" class="form-control pro_custom_attr" data-rule="' + customRule + '">' +
                 '</div> ' +
-                '</div>';
+                '</div>'
             $('body').find('.pro_extra_area').html(html);
         }
     });
     $('body').on('click', '.pro_add_rule_button', function () {
-        var id=$(this).attr('data-id');
         var attributes = $('body').find('[data-rule=' + rule + ']');
         var redyRule = rule;
         if (attributes.length) {
@@ -158,8 +120,7 @@ $(document).ready(function () {
                 }
             });
         }
-        $('body').find("ul[data-id="+id+"]").find('.tagit-choice').remove();
-        $('body').find("ul[data-id="+id+"]").tagit("createTag", redyRule);
+        $("#myTags").tagit("createTag", redyRule);
     });
     $('body').on('click', '.pro_add_extra_rule_button', function () {
         var attributes = $('body').find('[data-rule=' + customRule + ']');
